@@ -5,6 +5,7 @@ class Bea {
   public arquitecta: Arquitectura | null = null;
   public feminismo = new Feminismo();  
   public familia = new AmorALaFamilia([]);  
+  public amor = new Amor();  
 
   
   constructor(name: string, fullName: string, ocupacion: Arquitectura) {
