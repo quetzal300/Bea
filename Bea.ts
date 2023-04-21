@@ -1,91 +1,119 @@
 class Bea {
-    public name: string;
-    public paternalName = 'Hernández Ramos';  
-    private privatNeme = 'Cecilia';
-    public arquitecta: Arquitectura | null = null;
-    public feminismo = new Feminismo();  
-    public familia = new AmorALaFamilia([]);  
+  public name: string;
+  public paternalName = 'Hernández Ramos';  
+  private privatNeme = 'Cecilia';
+  public arquitecta: Arquitectura | null = null;
+  public feminismo = new Feminismo();  
+  public familia = new AmorALaFamilia([]);  
+
   
-    
-    constructor(name: string, paternalLastName: string, ocupacion: Arquitectura) {
-      this.name = name;
-      this.paternalName = paternalLastName;
-    }
-  
-    public getFullName(): string {
-      return `${this.name} ${this.paternalName}`;
-    }
-  
-    public tomarCafe(): void {
-      console.log(`${this.name} está tomando café.`);
-    }
-  
-    public trabajar(): void{
-      const trabajoPesado = true;
-      this.arquitecta?.crearSueñosHermosos(trabajoPesado);
-      this.tomarCafe();
-    }
-  
-    public heart(x: number, y: number): number {
-       const equation = x ** 2 + (y - x ** (2/3)) ** 2;
-       return equation;
-    }
-    
+  constructor(name: string, paternalLastName: string, ocupacion: Arquitectura) {
+    this.name = name;
+    this.paternalName = paternalLastName;
+  }
+
+  public getFullName(): string {
+    return `${this.name} ${this.paternalName}`;
+  }
+
+  public tomarCafe(): void {
+    console.log(`${this.name} está tomando café.`);
+  }
+
+  public trabajar(): void{
+    const trabajoPesado = true;
+    this.arquitecta?.crearSueñosHermosos(trabajoPesado);
+    this.tomarCafe();
+  }
+
+  public heart(x: number, y: number): number {
+     const equation = x ** 2 + (y - x ** (2/3)) ** 2;
+     return equation;
   }
   
-  class Arquitectura {
-      public estado: any[] = [];
-  
-      constructor(){
-          this.estado.push('pasion');
-          this.estado.push('esfuerzo');
-      }
-  
-      public crearSueñosHermosos(trabajoPesado: boolean): string{
-          if( trabajoPesado ){
-              this.addEstres();
-          }
-          return 'Construir';
-      }
-  
-      public addEstres(): void{
-          this.estado.push('estres');
-          this.estado.push('esfuerzo');
-          this.estado.push('estres');
-      }
+  public sonrisa(): string {
+      return ":-) jeje";
   }
   
-  class Activismo {
-    lucharPorDerechos(): void {
-      console.log("Luchar por los derechos de los grupos marginados");
+   public altruista(): Promise<string> {
+      return new Promise((resolve, reject) => {
+      resolve("¡Ayuda desconsiderada!");
+      setTimeout(() => {
+          // Bea no se ha dado cuenta de lo que ha hecho
+          reject("esfuerzo");
+      }, 2000);
+    });
+   }
+}
+
+class Amor {
+  private mundoColmadoDePeligros = true;
+  private sitiosLobregos = true;
+  private cosasHermosas = ['la naturaleza', 'el arte', 'el amor mismo'];
+  private amorUnidoAAfliccion = true;
+  private poderoso = true;
+
+  public sentirAmor(): void {
+    if (this.mundoColmadoDePeligros && this.sitiosLobregos) {
+      console.log('Es cierto que el mundo está colmado de peligros y que hay en él sitios lóbregos, pero hay también cosas hermosas y aunque en todas partes el amor está unido hoy a la aflicción, no por eso es menos poderoso');
     }
   }
-  
-  class Feminismo extends Activismo {
-    igualdadDeGenero(): void {
-      console.log("Luchar por la igualdad de género");
+}
+
+
+class Arquitectura {
+    public estado: any[] = [];
+
+    constructor(){
+        this.estado.push('pasion');
+        this.estado.push('esfuerzo');
     }
-  
-    finViolenciaDeGenero(): void {
-      console.log("Trabajar para poner fin a la violencia de género");
+
+    public crearSueñosHermosos(trabajoPesado: boolean): string{
+        if( trabajoPesado ){
+            this.addEstres();
+        }
+        return 'Construir';
+    }
+
+    public addEstres(): void{
+        this.estado.push('estres');
+        this.estado.push('esfuerzo');
+        this.estado.push('estres');
+    }
+}
+
+class Activismo {
+  lucharPorDerechos(): void {
+    console.log("Luchar por los derechos de los grupos marginados");
+  }
+}
+
+class Feminismo extends Activismo {
+  igualdadDeGenero(): void {
+    console.log("Luchar por la igualdad de género");
+  }
+
+  finViolenciaDeGenero(): void {
+    console.log("Trabajar para poner fin a la violencia de género");
+  }
+}
+
+class AmorALaFamilia {
+  public familiares: string[];
+
+  constructor(familiares: string[]) {
+    this.familiares = familiares;
+  }
+
+  public mostrarFamiliares(): void {
+    console.log("Estos son mis seres queridos: ");
+    for (const familiar of this.familiares) {
+      console.log("- " + familiar);
     }
   }
-  
-  class AmorALaFamilia {
-    public familiares: string[];
-  
-    constructor(familiares: string[]) {
-      this.familiares = familiares;
-    }
-  
-    public mostrarFamiliares(): void {
-      console.log("Estos son mis seres queridos: ");
-      for (const familiar of this.familiares) {
-        console.log("- " + familiar);
-      }
-    }
-  
-    public mostrarAmor(): void {
-      console.log("Amamos a nuestra familia y hacemos todo lo posible para cuidarla y mantenerla unida.");
-    }
+
+  public mostrarAmor(): void {
+    console.log("Amamos a nuestra familia y hacemos todo lo posible para cuidarla y mantenerla unida.");
   }
+}
