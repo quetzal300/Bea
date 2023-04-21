@@ -1,19 +1,19 @@
 class Bea {
   public name: string;
-  public paternalName = 'Hernández Ramos';  
+  public fullName = 'Beatriz Hernández Ramos';  
   private privatNeme = 'Cecilia';
   public arquitecta: Arquitectura | null = null;
   public feminismo = new Feminismo();  
   public familia = new AmorALaFamilia([]);  
 
   
-  constructor(name: string, paternalLastName: string, ocupacion: Arquitectura) {
+  constructor(name: string, fullName: string, ocupacion: Arquitectura) {
     this.name = name;
-    this.paternalName = paternalLastName;
+    this.fullName = fullName;
   }
 
   public getFullName(): string {
-    return `${this.name} ${this.paternalName}`;
+    return `${this.name} ${this.fullName}`;
   }
 
   public tomarCafe(): void {
