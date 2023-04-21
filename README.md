@@ -1,3 +1,3 @@
 # Bea
 Class Bea
-> Esta es una Clase Bea que instenta de cribir a una chica llamada Bety
+> Esta es una Clase Bea que intenta describir a una chica llamada Bety
